@@ -80,15 +80,15 @@
 				E8BB424427D787FB00D6BCA4 /* Model */,
 				E8BB422D27D777F400D6BCA4 /* AppDelegate.swift */,
 				E8BB422F27D777F400D6BCA4 /* SceneDelegate.swift */,
-				E882F13627DCBA7500A41B38 /* ComposeViewController.swift */,
-				E8BB424727D7899E00D6BCA4 /* MemoListTableViewController.swift */,
-				E882F13827DCBD0E00A41B38 /* UIViewController+Alert.swift */,
-				E882F13A27DCC36D00A41B38 /* DetailViewController.swift */,
 				E8BB423327D777F400D6BCA4 /* Main.storyboard */,
 				E8BB423927D777F600D6BCA4 /* Assets.xcassets */,
 				E8BB423B27D777F600D6BCA4 /* LaunchScreen.storyboard */,
 				E8BB423E27D777F600D6BCA4 /* Info.plist */,
 				E8BB423627D777F400D6BCA4 /* BoardApp_swift.xcdatamodeld */,
+				E882F13627DCBA7500A41B38 /* ComposeViewController.swift */,
+				E8BB424727D7899E00D6BCA4 /* MemoListTableViewController.swift */,
+				E882F13827DCBD0E00A41B38 /* UIViewController+Alert.swift */,
+				E882F13A27DCC36D00A41B38 /* DetailViewController.swift */,
 			);
 			path = BoardApp_swift;
 			sourceTree = "<group>";
