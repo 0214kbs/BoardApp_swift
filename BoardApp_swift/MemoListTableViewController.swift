@@ -17,9 +17,37 @@ class MemoListTableViewController: UITableViewController {
         f.locale = Locale(identifier: "Ko_kr") //날짜를 한글로 표시
         return f
     }()
+    
+    
+    //ViewController가 관리하는 view가 화면에 표시되기 직전에 자동으로 호출됨
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        //Data source가 전달해주는 최신 data로 update!
+//        tableView.reloadData()
+//
+//        //console로 확인
+//        print(#function)
+        
+    }
+    
+    var token: NSObjectProtocol?
+    
+    deinit{
+        if let token = token{
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
+//   ViewController 생성된 후, 자동으로 구현됨
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        token = NotificationCenter.default.addObserver(forName: ComposeViewController.newMemoDidInsert, object: nil, queue: OperationQueue.main, using: {[weak self] (noti) in
+            self?.tableView.reloadData()
+        })
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
