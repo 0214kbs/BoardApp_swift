@@ -29,6 +29,9 @@ class MemoListTableViewController: UITableViewController {
 //        //console로 확인
 //        print(#function)
         
+        DataManager.shared.fetchMemo()
+        tableView.reloadData()
+        
     }
     
     var token: NSObjectProtocol?
@@ -42,7 +45,7 @@ class MemoListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
             if let vc = segue.destination as? DetailViewController{
-                vc.memo = Memo.dummyMemoList[indexPath.row]
+                vc.memo = DataManager.shared.memoList[indexPath.row]
             }
         }
     }
@@ -75,19 +78,19 @@ class MemoListTableViewController: UITableViewController {
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return Memo.dummyMemoList.count
+        return DataManager.shared.memoList.count
     
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        let target = Memo.dummyMemoList[indexPath.row]
+        let target = DataManager.shared.memoList[indexPath.row]
         // tableView에서 몇번째 셀인지 확인할 수 있음
         
         cell.textLabel?.text = target.content
 //        cell.detailTextLabel?.text = "\(target.insertDate)"
-        cell.detailTextLabel?.text = formatter.string(from: target.insertDate)
+        cell.detailTextLabel?.text = formatter.string(for: target.insertDate)
         
         return cell
     }
