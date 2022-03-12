@@ -1,2 +1,2 @@
 # BoardApp_swift
-<img src = "https://user-images.githubusercontent.com/87002218/158021583-774ba1f0-e3b2-47be-ad7f-16be98754b45.mov">
+<!-- <img src = "https://user-images.githubusercontent.com/87002218/158021847-264d2b64-d3dc-49b4-ba9d-d08e751d547e.gif" width = "30%" height="30%"> -->
