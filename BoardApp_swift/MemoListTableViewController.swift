@@ -39,6 +39,13 @@ class MemoListTableViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
+            if let vc = segue.destination as? DetailViewController{
+                vc.memo = Memo.dummyMemoList[indexPath.row]
+            }
+        }
+    }
 //   ViewController 생성된 후, 자동으로 구현됨
     override func viewDidLoad() {
         super.viewDidLoad()
