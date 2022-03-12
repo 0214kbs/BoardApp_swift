@@ -117,6 +117,9 @@ class MemoListTableViewController: UITableViewController {
             let target = DataManager.shared.memoList[indexPath.row]
             DataManager.shared.deleteMemo(target)
             
+            // 여전히 삭제된 메모가 저장되어 있기 때문에, 배열에서도 삭제해야 thread1 error 해결할 수 있음
+            DataManager.shared.memoList.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         } else if editingStyle == .insert {
